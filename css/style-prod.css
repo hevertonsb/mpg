@@ -121,6 +121,10 @@ a::selection, ul li::selection {
     z-index: 2;
 }
 
+.slider h2 a{
+    color:var(--color-white);
+}
+
 .slider h2 a:visited{
     color:var(--color-white);
 }
