@@ -1,0 +1,32 @@
+{
+  "name": "miguel_arquiteto_associados",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hevertonsb/mpg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hevertonsb/mpg/issues"
+  },
+  "homepage": "https://github.com/hevertonsb/mpg#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cssmin": "^0.2.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "safari 5",
+    "ie 9",
+    "opera 12.1",
+    "ios 6",
+    "android 4"
+  ]
+}
