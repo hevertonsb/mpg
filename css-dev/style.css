@@ -619,12 +619,12 @@ a::selection, ul li::selection {
     }
 
     .nav__projetos ul{
-        width: 56.7%;
+        width: 50%;
     }
 
-    .nav__projetos ul li{
+    /* .nav__projetos ul li{
         flex: 1;
-    }
+    } */
 
     .busca__tag {
         width: 30%;
