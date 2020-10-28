@@ -619,7 +619,7 @@ a::selection, ul li::selection {
     }
 
     .nav__projetos ul{
-        width: 50%;
+        width: 60%;
     }
 
     /* .nav__projetos ul li{
@@ -628,6 +628,12 @@ a::selection, ul li::selection {
 
     .busca__tag {
         width: 30%;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .nav__projetos ul{
+        width: 50%;
     }
 }
 
