@@ -15,42 +15,15 @@ $(document).ready(function(){
       menuBtn.classList.remove("hide");
     }
 
-  // function a(a) {
-  //   return a.host !== window.location.host;
-  // }
-  // $("a").each(function () {
-  //     var a = new RegExp("/" + window.location.host + "/");
-  //     a.test(this.href) || $(this).attr("target", "_blank");
-  // });
-
-  // $(".spotlight a").each(function () {
-  //   a(this) && $(this).addClass("external");
-  // })
-
-
   $(".spotlight a").each(function () {
       $(this).addClass("external");
   })
 
-  $('.grid__gallery a').simpleLightbox();
-
-    // $('.slider__home').each(function (idx, item){
-    //   var carouselId = "carousel" + idx;
-    //   this.id = carouselId;
-    //   $(this).slick({
-    //       autoplay: true,
-    //       fade: true,
-    //       cssEase: 'linear',
-    //       arrows: false
-    //   });
-      
-    // })
 
     $('.slider__home-residencial').slick({
         autoplay: true,
         fade: true,
         cssEase: 'linear',
-        // adaptiveHeight: true,
         arrows: false,
         autoplaySpeed: 1500
     });
@@ -59,7 +32,6 @@ $(document).ready(function(){
         autoplay: true,
         fade: true,
         cssEase: 'linear',
-        // adaptiveHeight: true,
         arrows: false,
         autoplaySpeed: 3000
     });
@@ -68,7 +40,6 @@ $(document).ready(function(){
         autoplay: true,
         fade: true,
         cssEase: 'linear',
-        // adaptiveHeight: true,
         arrows: false,
         autoplaySpeed: 4500
     });
@@ -150,21 +121,58 @@ $(document).ready(function(){
               .fadeIn();
           });
       }
-    });
+    });4
+
+    var imgGallery = document.querySelectorAll('.grid__gallery > div img');
+
+    for(let i = 0; i < imgGallery.length; i++){
+        let overlayImgGallery = document.createElement('div');
+        overlayImgGallery.className = 'hvrbox-layer_top';
+        overlayImgGallery.innerHTML = `<div class="hvrbox-text">+</div>`;
+        imgGallery[i].parentNode.insertBefore(overlayImgGallery, imgGallery.nextSibling);
+    }
+
+    function createSlick(initSlider){
+      $('.slider__gallery__project').not('.slick-initialized').slick({
+        autoplay: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        initialSlide : parseInt(initSlider),
+        responsive: [
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                dots: true
+              }
+          }
+        ]
+      });
+
+      console.log('fora', iSlide);
+    }
+
+    var iSlide;
+
+    $('.grid__gallery .hvrbox').on('click', function(e){
+      e.preventDefault();
+      iSlide = $(this).data("number");
+      console.log('dentro', iSlide);
+      $(".projetos__interna, .nav__projetos").hide(400);
+      $('.header_extend').show()
+      $(".gallery_extend").show();
+      createSlick(iSlide);
+
+      $('.header_extend .btn_close_gallery').click(function(e){
+        e.preventDefault();
+        $(".projetos__interna, .nav__projetos").show(400);
+        $(".gallery_extend").hide();
+      })
+
+      return iSlide;
+    })
 
 });
-
-var imgGallery = document.querySelectorAll('.grid__gallery > div img');
-
-for(let i = 0; i < imgGallery.length; i++){
-    let overlayImgGallery = document.createElement('div');
-    overlayImgGallery.className = 'hvrbox-layer_top';
-    overlayImgGallery.innerHTML = `<div class="hvrbox-text">+</div>`;
-    imgGallery[i].parentNode.insertBefore(overlayImgGallery, imgGallery.nextSibling);
-}
-
-// let inputNome = document.getElementById('nome');
-// let inputEmail = document.getElementById('email');
-// let inputMensagem = document.getElementById('mensagem');
-// let btnSubmit = document.getElementById('btnSubmit');
-// let msgForm = document.querySelector('.form__box .box--submit p');

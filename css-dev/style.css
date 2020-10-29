@@ -92,6 +92,21 @@ a::selection, ul li::selection {
     font-weight: normal;
 }
 
+.projeto__nome{
+    color:var(--color-primary);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 2rem;
+}
+
+.projeto__nome span{
+    display: block;
+    color:var(--color-black);
+    margin-bottom: 5rem;
+    margin-top: .5rem;
+}
+
 /* END THEME STYLE */
 
 /* UTILITIES CLASS */
@@ -318,6 +333,12 @@ a::selection, ul li::selection {
 
 .navbar .content .logo{
     width: 290px;
+}
+
+@media screen and (max-width: 600px){
+    .navbar .content .logo{
+        width: 75%;
+    }
 }
 
 .navbar .menu-list{
@@ -563,6 +584,12 @@ a::selection, ul li::selection {
     justify-content: space-between;
 }
 
+@media only screen and (max-width: 898px){
+    .nav__projetos ul{
+        flex-direction: column;
+    }
+}
+
 .nav__projetos ul li{
     margin:1rem 0;
 }
@@ -730,14 +757,9 @@ a::selection, ul li::selection {
 
 .info__projetos .projeto__nome{
     margin-top: 0;
-    color:var(--color-primary);
-    text-transform: uppercase;
-    margin-bottom: 2rem;
 }
 
 .info__projetos h3 span{
-    display: block;
-    color:var(--color-black);
     margin-bottom: 6rem;
 }
 
@@ -777,6 +799,52 @@ a::selection, ul li::selection {
 .lista__planta li{
     margin:.5rem 0;
 }
+
+/* .gallery_extend {
+    display: none;
+}
+
+.slider__gallery__project{
+    height: 1px;
+    overflow: hidden;
+    visibility: hidden;
+    transition: height 0.2s linear;
+}
+
+.gallery_extend .header_extend{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.gallery_extend .header_extend .btn_close_gallery{
+    background: url(../img/close-gallery.png) no-repeat;
+    width: 35px;
+    height: 36px;
+    cursor: pointer;
+}
+
+.gallery_extend .projeto__nome span{
+    margin-bottom: 0;
+}
+
+.gallery_extend .slick-initialized .slick-slide {
+    max-height: 550px;
+} */
+
+/* .gallery_extend .slick-slider .slick-slide{
+    display: none;
+}
+
+.gallery_extend .slick-slider .slick-slide:first-child{
+    display: block;
+}
+
+.gallery_extend .slick-initialized.slick-slider .slick-slide,
+.gallery_extend .slick-initialized.slick-slider .slick-slide:first-child{
+    display: block;
+} */
 
 @media only screen and (min-width: 780px){
     .lista__planta{
@@ -985,6 +1053,10 @@ a::selection, ul li::selection {
 .spotlight .content{
     width:100%;
     margin:1rem 0;
+}
+
+.spotlight .image{
+    cursor: pointer;
 }
 
 .spotlight:nth-child(3n){
