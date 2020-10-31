@@ -75,6 +75,7 @@ a::selection, ul li::selection {
     font-size: 2rem;
     font-weight: bold;
     margin: 4rem 0 7.5rem 0;
+    letter-spacing: .4rem;
 }
 
 .subtitle__content{
@@ -90,6 +91,7 @@ a::selection, ul li::selection {
     color:var(--color-primary);
     font-size: 2rem;
     font-weight: normal;
+    letter-spacing: 0.05em;
 }
 
 .projeto__nome{
@@ -191,6 +193,10 @@ a::selection, ul li::selection {
     margin: 18rem auto 14rem;
 }
 
+.box__footer{
+    width: 100%;
+}
+
 .footer__logo-info div{
     margin-bottom: 4rem;
 }
@@ -199,6 +205,7 @@ a::selection, ul li::selection {
     text-transform: uppercase;
     color: var(--color-secondary);
     margin: .35rem 0;
+    letter-spacing: .25rem;
 }
 
 .footer__logo-info span{
@@ -227,7 +234,7 @@ a::selection, ul li::selection {
     font-size: 1.3rem;
 }
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 800px){
     .footer{
         text-align: center;
         margin: 18rem 5%;
@@ -243,14 +250,29 @@ a::selection, ul li::selection {
     }
 }
 
-@media only screen and (min-width: 700px){
+@media only screen and (min-width: 800px){
     .footer{
         display: flex;
         justify-content: space-around;
     }
 
+    .box__footer{
+        display: flex;
+        justify-content: space-between;
+    }
+
     .footer__logo-box{
-        width:300px;
+        width:306px;
+    }
+}
+
+// @media only screen and (min-width: 700px){
+
+// }
+
+@media only screen and (min-width: 1140px){
+    .box__footer{
+        width: 85%;
     }
 }
 
@@ -359,6 +381,7 @@ a::selection, ul li::selection {
     display: inline-block;
     position: relative;
     padding-bottom: 1.25rem;
+    letter-spacing: .05rem;
 }
 
 @media screen and (min-width: 1100px) and (max-width: 1280px){
@@ -552,7 +575,7 @@ a::selection, ul li::selection {
 .hvrbox .hvrbox-text {
 	text-align: center;
     font-size: 15.5rem;
-    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Arial', sans-serif;
     font-weight: 300;
 	display: inline-block;
 	position: absolute;
@@ -584,12 +607,6 @@ a::selection, ul li::selection {
     justify-content: space-between;
 }
 
-@media only screen and (max-width: 898px){
-    .nav__projetos ul{
-        flex-direction: column;
-    }
-}
-
 .nav__projetos ul li{
     margin:1rem 0;
 }
@@ -607,27 +624,38 @@ a::selection, ul li::selection {
     color:var(--color-primary);;
 }
 
+.nav__projetos .search-icon{
+    background: url("../img/icon-lupa.svg") no-repeat;
+    width:26px;
+    height:22px;
+    cursor: pointer;
+}
+
 .nav__projetos input[type=search] {
-    width: 130px;
+    width:130px;
+    display: none;
     transition: width 0.4s ease-in-out;
-    padding: 1.5rem 3rem;
+    padding: 1.1rem 0;
     font-size: 1.4rem;
     border: 1px solid transparent;
-    background: url("../img/icon-lupa.png") no-repeat 0 15px;
+    // background: url("../img/icon-lupa.svg") no-repeat 0 15px;
     font-weight: 300;
 }
 
 .nav__projetos input[type=search]:focus {
     width: 65%;
     outline: none;
+    padding: 1.1rem 3rem 1.1rem 1rem;
 }
 
 .nav__projetos button[type=reset]{
     background: url("../img/button-reset-search.png") no-repeat center center;
     border: none;
     text-decoration: none;
-    width: 50px;
-    height:50px;
+    width: 40px;
+    height:40px;
+    padding:0;
+    display: none;
 }
 
 .nav__projetos button[type=reset]:focus{
@@ -636,6 +664,19 @@ a::selection, ul li::selection {
 
 .nav__projetos .busca__tag{
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@media only screen and (max-width: 898px){
+    .nav__projetos ul{
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+
+    .nav__projetos .busca__tag{
+        justify-content: flex-start;
+    }
 }
 
 @media only screen and (min-width: 899px){
@@ -643,6 +684,7 @@ a::selection, ul li::selection {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
     }
 
     .nav__projetos ul{
@@ -663,6 +705,10 @@ a::selection, ul li::selection {
         width: 50%;
     }
 }
+
+//
+
+// 
 
 /* PROJETOS */
 
@@ -794,6 +840,7 @@ a::selection, ul li::selection {
     color:var(--color-primary);
     font-size: 1.8rem;
     text-transform: uppercase;
+    font-weight: normal;
 }
 
 .lista__planta li{
@@ -912,7 +959,7 @@ a::selection, ul li::selection {
     .grid__gallery{
         flex: 1;
         display: grid;
-        grid-template-columns: 4fr 1.5fr;
+        grid-template-columns: 4fr 2fr;
         grid-template-rows: repeat(4, 4fr);
         grid-template-areas:  "box-1 ."
 							  "box-2 box-3"
@@ -1006,6 +1053,7 @@ a::selection, ul li::selection {
         margin-top: 0;
         font-size: 1.4rem;
         line-height: 2.5rem;
+        font-weight: normal;
     }
 
     .content__text--sub{
@@ -1220,6 +1268,7 @@ a::selection, ul li::selection {
 @media only screen and (min-width: 768px){
     .content__contato-main{
         flex-direction: row;
+        margin-bottom: 5rem;
     }
 
     .content__contato-main .footer{
@@ -1312,6 +1361,10 @@ a::selection, ul li::selection {
 
 /* GALLERY LIGHTBOX */
 
+.slbCaption{
+    color:var(--color-white);
+}
+
 .slbOverlay{
     opacity: 0.85;
 }
@@ -1323,6 +1376,7 @@ a::selection, ul li::selection {
 .slbArrow{
     width: 3em;
     height: 6.1em;
+    opacity: 1;
 }
 
 .slbArrows{
@@ -1331,11 +1385,15 @@ a::selection, ul li::selection {
 }
 
 .slbArrow.prev{
-    background:url("../img/arrow-prev.png") no-repeat;
+    background:url("../img/arrow-prev-white.png") no-repeat;
+    height: 61px;
+    width: 25px;
 }
 
 .slbArrow.next{
-    background:url("../img/arrow-next.png") no-repeat;
+    background:url("../img/arrow-next-white.png") no-repeat;
+    height: 61px;
+    width: 25px;
 }
 
 .slbArrow.prev:before, 
@@ -1344,5 +1402,5 @@ a::selection, ul li::selection {
 }
 
 .slbCloseBtn{
-    background: url("../img/close-gallery.png") no-repeat;
+    background: url("../img/close-gallery.gif") no-repeat;
 }
