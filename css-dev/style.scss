@@ -76,6 +76,10 @@ a::selection, ul li::selection {
     font-weight: bold;
     margin: 4rem 0 7.5rem 0;
     letter-spacing: .4rem;
+    @media only screen and (max-width: 779px){
+        font-size: 1.5rem;
+        font-weight: normal;
+    }
 }
 
 .subtitle__content{
@@ -85,6 +89,16 @@ a::selection, ul li::selection {
     font-weight: bold;
     margin:7.5rem 0 4rem;
     letter-spacing: .4rem;
+    @media only screen and (max-width: 779px){
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width:779px){
+    .content__text--main{
+        font-size: 1.4rem;
+        letter-spacing: .15rem;
+    }
 }
 
 .main-name{
@@ -100,6 +114,9 @@ a::selection, ul li::selection {
     text-transform: uppercase;
     font-weight: normal;
     margin-bottom: 2rem;
+    @media only screen and (max-width: 779px){
+        font-size: 1.5rem;
+    }
 }
 
 .projeto__nome span{
@@ -170,9 +187,9 @@ a::selection, ul li::selection {
     }
 
     .content__home .slider h2{
-        font-size: 1.75rem;
-        min-width: 30rem;
-        max-width: 100%;
+        font-size: 1.6rem;
+        min-width: 29rem;
+        max-width: 90%;
         height: auto;
         padding: .5rem;
         letter-spacing: 1.5rem;
@@ -237,7 +254,7 @@ a::selection, ul li::selection {
 @media only screen and (max-width: 800px){
     .footer{
         text-align: center;
-        margin: 18rem 5%;
+        margin: 10rem 5%;
     }
 
     .footer__logo-box{
@@ -501,7 +518,7 @@ a::selection, ul li::selection {
 
     .navbar .menu-list li a{
         color:var(--color-white);
-        font-size: 23px;
+        font-size: 20px;
         margin-left: -100%;
         transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
@@ -617,6 +634,9 @@ a::selection, ul li::selection {
     color: var(--color-light-gray);
     transition: all .2s ease-in;
     letter-spacing: .4rem;
+    @media only screen and (max-width: 767px){
+        font-size: 1.5rem;
+    }
 }
 
 .nav__projetos ul li a:hover,
@@ -634,7 +654,7 @@ a::selection, ul li::selection {
 .nav__projetos input[type=search] {
     width:130px;
     display: none;
-    transition: width 0.4s ease-in-out;
+    // transition: width 0.4s ease-in-out;
     padding: 1.1rem 0;
     font-size: 1.4rem;
     border: 1px solid transparent;
@@ -643,7 +663,7 @@ a::selection, ul li::selection {
 }
 
 .nav__projetos input[type=search]:focus {
-    width: 65%;
+    // width: 65%;
     outline: none;
     padding: 1.1rem 3rem 1.1rem 1rem;
 }
@@ -788,12 +808,16 @@ a::selection, ul li::selection {
 .info__projetos .info__list{
     display: flex;
     flex-wrap: wrap;
-    margin:1rem
+    // margin:1rem;
+    flex-direction: column;
 } 
 
 .info__projetos .info__list li {
     margin:2rem 1rem;
     flex: 1;
+    @media only screen and (max-width: 779px){
+        margin:2rem 0;
+    }
 }
 
 .info__projetos{
@@ -807,6 +831,9 @@ a::selection, ul li::selection {
 
 .info__projetos h3 span{
     margin-bottom: 6rem;
+    @media only screen and (max-width: 779px){
+        margin-bottom: 3rem;
+    }
 }
 
 .info__projetos .info__list li span{
@@ -1030,6 +1057,8 @@ a::selection, ul li::selection {
 
     .main-name {
         margin: 1rem 0;
+        font-size: 1.4rem;
+        font-weight: normal;
     }
 
     .image-box{
@@ -1204,6 +1233,9 @@ a::selection, ul li::selection {
     outline: 0;
     font-size: 1.4rem;
     font-weight: normal;
+    -webkit-appearance: none;
+    -webkit-border-radius:0px;
+    border-radius: 0 !important;
 }
 
 .form__box input:valid, .form__box textarea:valid {
@@ -1212,6 +1244,9 @@ a::selection, ul li::selection {
 
 .form__box input:focus, .form__box textarea:focus {
     border-color: var(--color-primary);
+    -webkit-appearance: none;
+    -webkit-border-radius:0px;
+    border-radius: 0 !important;
 }
 
 .form__box input:focus + label, .form__box textarea:focus + label {
@@ -1380,8 +1415,11 @@ a::selection, ul li::selection {
 }
 
 .slbArrows{
-    left: 5rem;
-    right: 5rem;
+    left: 2rem;
+    right: 2rem;
+    @media only screen and (max-width: 767px){
+        top:55%;
+    }
 }
 
 .slbArrow.prev{
@@ -1403,4 +1441,26 @@ a::selection, ul li::selection {
 
 .slbCloseBtn{
     background: url("../img/close-gallery.gif") no-repeat;
+}
+
+a[href^="tel"] {
+    color: var(--color-primary) !important;
+    text-decoration: none;
+}
+
+.main-name-team{
+    text-align: center;
+    color:var(--color-primary);
+    font-size: 1.1rem;
+    font-weight: normal;
+    @media only screen and (min-width: 768px){
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .p-team{
+        font-size: 1.3rem;
+        letter-spacing: .15rem;
+    }
 }
